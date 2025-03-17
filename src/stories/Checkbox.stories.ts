@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
-import { Example } from "@/components/Example";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const meta = {
-  title: "Example",
-  component: Example,
+  title: "Checkbox",
+  component: Checkbox,
   parameters: {
     layout: "centered",
   },
   argTypes: {
-    backgroundColor: { control: "color" },
+    disabled: { control: "boolean" },
   },
   args: { onClick: fn() },
-} satisfies Meta<typeof Example>;
+} satisfies Meta<typeof Checkbox>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Default: Story = {};
