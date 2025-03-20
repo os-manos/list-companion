@@ -1,0 +1,18 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+import { Trash2 } from "lucide-react";
+
+const meta = {
+  title: "Lucid Icons/Trash",
+  component: Trash2,
+  parameters: {
+    layout: "centered",
+  },
+  argTypes: { size: { control: "number" }, color: { control: "color" } },
+  args: { size: 36, color: "#FFFF" },
+} satisfies Meta<typeof Trash2>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {};
