@@ -2,11 +2,11 @@ import React from "react";
 import { Checkbox } from "./ui/checkbox";
 import { Trash2 } from "lucide-react";
 
-interface Props {
+type Props = {
   checked: boolean;
   label: string;
   onClick: () => void;
-}
+};
 
 export const CheckboxCard = ({ checked = false, label, onClick }: Props) => {
   return (
