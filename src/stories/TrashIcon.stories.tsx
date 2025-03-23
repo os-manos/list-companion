@@ -7,7 +7,10 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  argTypes: { size: { control: "number" }, color: { control: "color" } },
+  argTypes: {
+    size: { control: "number", description: "Tamanho em pixels do ícone" },
+    color: { control: "color", description: "Cor referente a borda do ícone." },
+  },
   args: { size: 36, color: "#FFFF" },
 } satisfies Meta<typeof Trash2>;
 

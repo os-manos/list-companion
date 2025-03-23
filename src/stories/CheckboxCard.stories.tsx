@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     checked: { table: { disable: true } },
     onClick: { table: { disable: true } },
-    name: { control: "text" },
+    name: { control: "text", description: "Nome do item da lista" },
   },
   args: {
     name: "Café preto",

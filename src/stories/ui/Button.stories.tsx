@@ -9,14 +9,19 @@ const meta = {
     layout: "centered",
   },
   argTypes: {
-    disabled: { control: "boolean" },
+    disabled: {
+      control: "boolean",
+      description: "Parametro responsável por desativar ou não o button",
+    },
     size: {
       control: { type: "select" },
       options: ["default", "sm", "lg", "icon"],
+      description: "Opções de tamanho aceitas pelo componente button",
     },
     variant: {
       control: { type: "select" },
       options: ["default", "destructive", "outline", "secondary", "ghost"],
+      description: "Variantes possíveis aceitas pelo componente button",
     },
   },
   args: {

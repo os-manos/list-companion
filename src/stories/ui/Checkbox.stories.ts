@@ -9,7 +9,10 @@ const meta = {
     layout: "centered",
   },
   argTypes: {
-    disabled: { control: "boolean" },
+    disabled: {
+      control: "boolean",
+      description: "Parametro responsável pro ativar ou não o checkbox",
+    },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Checkbox>;
