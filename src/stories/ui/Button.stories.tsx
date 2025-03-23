@@ -1,4 +1,4 @@
-import type { Meta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
 import { Button } from "@/components/ui/button";
@@ -24,16 +24,17 @@ const meta = {
       description: "Variantes possíveis aceitas pelo componente button",
     },
   },
-  args: {
-    onClick: fn(),
-    size: "default",
-    variant: "default",
-    disabled: false,
-  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 
-export const Default = ({ ...props }: React.ComponentProps<typeof Button>) => (
-  <Button {...props}>Click me!</Button>
-);
+export const Default: StoryObj<Meta> = {
+  args: { size: "default", variant: "default", disabled: false },
+  render: ({ size, variant, disabled }) => {
+    return (
+      <Button size={size} variant={variant} disabled={disabled}>
+        Click me!
+      </Button>
+    );
+  },
+};
