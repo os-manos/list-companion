@@ -2,17 +2,13 @@ import React from "react";
 import { Checkbox } from "./ui/checkbox";
 import { Trash2 } from "lucide-react";
 
-interface CheckboxCardProps {
+interface Props {
   checked: boolean;
   label: string;
   onClick: () => void;
 }
 
-export const CheckboxCard = ({
-  checked = false,
-  label,
-  onClick,
-}: CheckboxCardProps) => {
+export const CheckboxCard = ({ checked = false, label, onClick }: Props) => {
   return (
     <div className="p-3 lg:p-2 bg-white rounded-md flex w-full justify-between items-center">
       <div className="flex items-center gap-3 overflow-hidden">
