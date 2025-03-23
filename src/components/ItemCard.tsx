@@ -8,7 +8,7 @@ type Props = {
   onClick: () => void;
 };
 
-export const CheckboxCard = ({ checked = false, label, onClick }: Props) => {
+export const ItemCard = ({ checked = false, label, onClick }: Props) => {
   return (
     <div className="p-3 lg:p-2 bg-white rounded-md flex w-full justify-between items-center">
       <div className="flex items-center gap-3 overflow-hidden">
