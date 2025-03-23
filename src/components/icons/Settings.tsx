@@ -1,11 +1,13 @@
-import React, { SVGProps } from "react";
+import React from "react";
+
+import { Props } from "./Props";
 
 const Settings = ({
   height = "24px",
   width = "24px",
   fill = "#FFF",
   ...props
-}: SVGProps<SVGSVGElement>) => {
+}: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
