@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import Close from "@/components/icons/Close";
+import { Close } from "@/components/icons/Close";
 
 const meta = {
   component: Close,
@@ -8,13 +7,14 @@ const meta = {
     layout: "centered",
   },
   argTypes: {
-    height: { control: "text", description: "Altura do ícone" },
-    width: { control: "text", description: "Largura do ícone" },
-    fill: { control: "color", description: "Cor do ícone" },
+    className: {
+      control: "text",
+      description: "Class name que irá receber as props de estilo do ícone",
+    },
   },
 } satisfies Meta<typeof Close>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Docs: Story = {};
