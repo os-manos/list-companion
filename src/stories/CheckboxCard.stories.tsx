@@ -1,4 +1,5 @@
 import type { Meta } from "@storybook/react";
+import { StoryObj } from "@storybook/react";
 
 import { CheckboxCard } from "@/components/CheckboxCard";
 import { useState } from "react";
@@ -13,24 +14,22 @@ const meta = {
     onClick: { table: { disable: true } },
     label: { control: "text", description: "Nome do item da lista" },
   },
-  args: {
-    label: "Café preto",
-  },
 } satisfies Meta<typeof CheckboxCard>;
 
 export default meta;
 
-export const Default = ({
-  ...props
-}: React.ComponentProps<typeof CheckboxCard>) => {
-  const [isChecked, setIsChecked] = useState(false);
-  return (
-    <div className="size-96 bg-gray-300 flex items-center p-6">
-      <CheckboxCard
-        onClick={() => setIsChecked(!isChecked)}
-        checked={isChecked}
-        label={props.label}
-      />
-    </div>
-  );
+export const Default: StoryObj<Meta> = {
+  args: { label: "Café preto" },
+  render: ({ label }) => {
+    const [isChecked, setIsChecked] = useState(false);
+    return (
+      <div className="size-96 bg-gray-300 flex items-center p-6">
+        <CheckboxCard
+          onClick={() => setIsChecked(!isChecked)}
+          checked={isChecked}
+          label={label}
+        />
+      </div>
+    );
+  },
 };
