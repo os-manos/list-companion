@@ -4,7 +4,6 @@ import { fn } from "@storybook/test";
 import { Checkbox } from "@/components/ui/checkbox";
 
 const meta = {
-  title: "ShadCN Components/Checkbox",
   component: Checkbox,
   parameters: {
     layout: "centered",

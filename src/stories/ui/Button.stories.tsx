@@ -4,7 +4,6 @@ import { fn } from "@storybook/test";
 import { Button } from "@/components/ui/button";
 
 const meta = {
-  title: "ShadCN Components/Button",
   component: Button,
   parameters: {
     layout: "centered",
