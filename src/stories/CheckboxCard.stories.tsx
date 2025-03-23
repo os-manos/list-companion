@@ -4,7 +4,6 @@ import { CheckboxCard } from "@/components/CheckboxCard";
 import { useState } from "react";
 
 const meta = {
-  title: "Components/Checkbox Card",
   component: CheckboxCard,
   parameters: {
     layout: "centered",

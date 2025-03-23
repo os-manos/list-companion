@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Trash2 } from "lucide-react";
 
 const meta = {
-  title: "Lucid Icons/Trash",
   component: Trash2,
   parameters: {
     layout: "centered",
