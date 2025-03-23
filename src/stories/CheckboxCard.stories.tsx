@@ -11,10 +11,10 @@ const meta = {
   argTypes: {
     checked: { table: { disable: true } },
     onClick: { table: { disable: true } },
-    name: { control: "text", description: "Nome do item da lista" },
+    label: { control: "text", description: "Nome do item da lista" },
   },
   args: {
-    name: "Café preto",
+    label: "Café preto",
   },
 } satisfies Meta<typeof CheckboxCard>;
 
@@ -29,7 +29,7 @@ export const Default = ({
       <CheckboxCard
         onClick={() => setIsChecked(!isChecked)}
         checked={isChecked}
-        name={props.name}
+        label={props.label}
       />
     </div>
   );
