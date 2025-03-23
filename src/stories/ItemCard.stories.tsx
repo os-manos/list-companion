@@ -10,16 +10,27 @@ const meta = {
     layout: "centered",
   },
   argTypes: {
-    checked: { table: { disable: true } },
-    onClick: { table: { disable: true } },
+    checked: {
+      table: { disable: true },
+      description: "Valor do checkbox, será recebido via param",
+    },
+    onClick: {
+      table: { disable: true },
+      description: "Evento disparado ao clicar no checkbox",
+    },
     label: { control: "text", description: "Nome do item da lista" },
   },
 } satisfies Meta<typeof ItemCard>;
 
 export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Default: StoryObj<Meta> = {
-  args: { label: "Café preto" },
+export const Default: Story = {
+  args: {
+    label: "Café preto",
+    checked: false,
+    onClick: () => console.log("hello"),
+  },
   render: ({ label }) => {
     const [isChecked, setIsChecked] = useState(false);
     return (
