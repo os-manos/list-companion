@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Checklist } from "@/components/icons/Checklist";
+import { ChecklistIcon } from "@/components/icons/Checklist";
 
 const meta = {
-  component: Checklist,
+  component: ChecklistIcon,
   parameters: {
     layout: "centered",
   },
@@ -12,7 +12,7 @@ const meta = {
       description: "Class name que irá receber as props de estilo do ícone",
     },
   },
-} satisfies Meta<typeof Checklist>;
+} satisfies Meta<typeof ChecklistIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

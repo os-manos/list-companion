@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Delete } from "@/components/icons/Delete";
+import { DeleteIcon } from "@/components/icons/Delete";
 
 const meta = {
-  component: Delete,
+  component: DeleteIcon,
   parameters: {
     layout: "centered",
   },
@@ -12,7 +12,7 @@ const meta = {
       description: "Class name que irá receber as props de estilo do ícone",
     },
   },
-} satisfies Meta<typeof Delete>;
+} satisfies Meta<typeof DeleteIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

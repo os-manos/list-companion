@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Alert } from "@/components/icons/Alert";
+import { AlertIcon } from "@/components/icons/Alert";
 
 const meta = {
-  component: Alert,
+  component: AlertIcon,
   parameters: {
     layout: "centered",
   },
@@ -12,7 +12,7 @@ const meta = {
       description: "Class name que irá receber as props de estilo do ícone",
     },
   },
-} satisfies Meta<typeof Alert>;
+} satisfies Meta<typeof AlertIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

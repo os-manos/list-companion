@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Settings } from "@/components/icons/Settings";
+import { SettingsIcon } from "@/components/icons/Settings";
 
 const meta = {
-  component: Settings,
+  component: SettingsIcon,
   parameters: {
     layout: "centered",
   },
@@ -12,7 +12,7 @@ const meta = {
       description: "Class name que irá receber as props de estilo do ícone",
     },
   },
-} satisfies Meta<typeof Settings>;
+} satisfies Meta<typeof SettingsIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

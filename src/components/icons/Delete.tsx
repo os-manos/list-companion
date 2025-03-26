@@ -1,7 +1,7 @@
 import { SvgProps } from "@/lib/Props";
 import { cn } from "@/lib/utils";
 
-export const Delete: React.FC<SvgProps> = ({ className, ...props }) => {
+export const DeleteIcon: React.FC<SvgProps> = ({ className, ...props }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
