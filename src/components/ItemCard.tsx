@@ -8,7 +8,11 @@ type Props = {
   onClick: () => void;
 };
 
-export const ItemCard = ({ checked = false, label, onClick }: Props) => {
+export const ItemCard: React.FC<Props> = ({
+  checked = false,
+  label,
+  onClick,
+}) => {
   return (
     <div className="p-3 lg:p-2 bg-white rounded-md flex w-full justify-between items-center">
       <div className="flex items-center gap-3 overflow-hidden">
