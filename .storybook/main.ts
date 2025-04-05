@@ -7,6 +7,8 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@chromatic-com/storybook",
     "@storybook/experimental-addon-test",
+    "@storybook/addon-links",
+    "@storybook/addon-actions",
   ],
   framework: {
     name: "@storybook/nextjs",
@@ -15,4 +17,3 @@ const config: StorybookConfig = {
   staticDirs: ["../public"],
 };
 export default config;
-
