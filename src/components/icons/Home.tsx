@@ -1,4 +1,4 @@
-import { SvgProps } from "@/lib/Props";
+import { SvgProps } from "@/lib/props";
 import { cn } from "@/lib/utils";
 
 export const HomeIcon: React.FC<SvgProps> = ({ className, ...props }) => {
