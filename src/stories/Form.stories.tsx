@@ -11,6 +11,25 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    config: {
+      control: "object",
+      description:
+        "Configuração do formulário incluindo os componentes que irão ser renderizados e as opções do react-hook-form",
+    },
+    buttonLabel: {
+      control: "text",
+      description: "Texto do botão de submit",
+    },
+    onSubmit: {
+      action: "submit",
+      description: "Função chamada ao submeter o formulário",
+    },
+    className: {
+      control: "text",
+      description: "Classe CSS do formulário",
+    },
+  },
 } satisfies Meta<typeof Form>;
 
 export default meta;
