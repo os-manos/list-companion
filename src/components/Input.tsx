@@ -2,11 +2,11 @@ import { InputRoot } from "./ui/input";
 
 import { cn } from "@/lib/utils";
 
-export const Input: React.FC = ({
+export const Input: React.FC<React.ComponentProps<"input">> = ({
   className,
   type,
   ...props
-}: React.ComponentProps<"input">) => {
+}) => {
   return (
     <InputRoot
       type={type}
