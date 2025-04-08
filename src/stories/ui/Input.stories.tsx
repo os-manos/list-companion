@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
 import { InputRoot } from "@/components/ui/input";
 
 const meta = {
@@ -35,7 +34,6 @@ const meta = {
       },
     },
   },
-  args: { onClick: fn() },
 } satisfies Meta<typeof InputRoot>;
 
 export default meta;
@@ -43,9 +41,4 @@ type Story = StoryObj<typeof meta>;
 
 export const Docs: Story = {
   args: { disabled: false, type: "email", placeholder: "Placeholder" },
-  render: ({ disabled, type, placeholder }) => {
-    return (
-      <InputRoot disabled={disabled} type={type} placeholder={placeholder} />
-    );
-  },
 };
