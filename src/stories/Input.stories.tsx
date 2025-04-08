@@ -40,5 +40,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Docs: Story = {
-  args: { disabled: false, type: "email", placeholder: "Placeholder" },
+  args: { disabled: false, type: "text", placeholder: "Placeholder" },
 };

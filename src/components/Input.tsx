@@ -1,25 +1,51 @@
 import { InputRoot } from "./ui/input";
 
-import { cn } from "@/lib/utils";
+type AllowedInputs = "email" | "password" | "text";
 
-export const Input: React.FC<React.ComponentProps<"input">> = ({
-  className,
-  type,
-  ...props
-}) => {
+type Props = React.ComponentProps<"input"> & {
+  type?: AllowedInputs;
+};
+
+const PasswordInput: React.FC<Props> = ({ className, ...props }) => {
   return (
     <InputRoot
-      type={type}
+      type={"password"}
       data-slot="input"
-      className={cn(
-        "h-11 px-3 py-2.5 leading-normal",
-        "file:h-6 file:text-xs",
-        "md:h-12 md:px-4 md:py-3 md:text-base md:file:h-7 md:file:text-sm",
-        "transition-all duration-200 ease-in-out",
-        "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
-        className
-      )}
+      className={className}
       {...props}
     />
   );
+};
+
+const EmailInput: React.FC<Props> = ({ className, ...props }) => {
+  return (
+    <InputRoot
+      type={"email"}
+      data-slot="input"
+      className={className}
+      {...props}
+    />
+  );
+};
+
+const TextInput: React.FC<Props> = ({ className, ...props }) => {
+  return (
+    <InputRoot
+      type={"text"}
+      data-slot="input"
+      className={className}
+      {...props}
+    />
+  );
+};
+
+const inputComponents: Record<AllowedInputs, React.FC<Props>> = {
+  email: EmailInput,
+  text: TextInput,
+  password: PasswordInput,
+};
+
+export const Input: React.FC<Props> = ({ type, ...props }) => {
+  const InputComponent = type ? inputComponents[type] : inputComponents["text"];
+  return <InputComponent {...props} />;
 };
