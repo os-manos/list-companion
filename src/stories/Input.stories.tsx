@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "@/components/Input";
 
+type InputProps = React.ComponentProps<typeof Input>;
+type AllowedInputs = InputProps["type"];
+
 const meta = {
   component: Input,
   parameters: {
@@ -12,7 +15,8 @@ const meta = {
       description: "Parametro responsável pro ativar ou não o o input",
     },
     type: {
-      control: "text",
+      control: "select",
+      options: ["email", "password", "text"] as AllowedInputs[],
       description: "Tipo do input",
     },
     placeholder: {
