@@ -15,14 +15,9 @@ export const Tabs = <TConfig extends Record<string, TabsConfig>>({
 }: Props<TConfig>) => {
   return (
     <TabsRoot defaultValue={defaultValue as string}>
-      <TabsList className="bg-black">
+      <TabsList>
         {Object.entries(config).map(([key, { name }], index) => (
-          <TabsTrigger
-            key={index}
-            value={key}
-            className="bg-black text-white data-[state=active]:bg-gray-500"
-            asChild
-          >
+          <TabsTrigger key={index} value={key} asChild>
             {currentPageUrl ? (
               <Link href={`${currentPageUrl}?tab=${key}`}>{name}</Link>
             ) : (
