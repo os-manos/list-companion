@@ -10,7 +10,7 @@ import {
   FormMessage,
   FormRoot,
 } from "./ui/form";
-import {Button} from "./ui/button";
+import { Button } from "./ui/button";
 
 type Props<T extends z.ZodTypeAny> = {
   config: FormConfig<T>;
@@ -30,7 +30,10 @@ export const Form = <TSchema extends z.ZodTypeAny>({
 
   return (
     <FormRoot {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-full min-w-0 flex flex-col items-center py-8 px-4 gap-4"
+      >
         {Object.entries(item).map(([key, { label, Component }], index) => (
           <FormField
             key={index}
@@ -42,14 +45,19 @@ export const Form = <TSchema extends z.ZodTypeAny>({
                 <FormControl>
                   <Component {...field} />
                 </FormControl>
-
                 <FormMessage />
               </FormItem>
             )}
           />
         ))}
 
-        <Button type="submit" disabled={!form.formState.isDirty}>{buttonLabel}</Button>
+        <Button
+          type="submit"
+          disabled={!form.formState.isDirty}
+          className="w-full mt-4"
+        >
+          {buttonLabel}
+        </Button>
       </form>
     </FormRoot>
   );

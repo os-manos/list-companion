@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { Meta, StoryObj } from "@storybook/react";
 import { ControllerRenderProps } from "react-hook-form";
 
+import { Input } from "@/components/Input";
 import { FormConfig } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/Form";
@@ -55,15 +56,15 @@ const Schema = z.object({
 type Schema = typeof Schema;
 
 const FormInputName: React.FC<ControllerRenderProps> = (field) => {
-  return <input {...field} placeholder="Enter your name" />;
+  return <Input {...field} placeholder="Enter your name" />;
 };
 
 const FormInputPassword: React.FC<ControllerRenderProps> = (field) => {
-  return <input {...field} type="password" placeholder="Enter your password" />;
+  return <Input {...field} type="password" placeholder="Enter your password" />;
 };
 
 const FormInputEmail: React.FC<ControllerRenderProps> = (field) => {
-  return <input {...field} type="email" placeholder="Enter your email" />;
+  return <Input {...field} type="email" placeholder="Enter your email" />;
 };
 
 const config: FormConfig<Schema> = {
@@ -96,5 +97,16 @@ export const Default: Story = {
     config: config,
     buttonLabel: "Submit",
     onSubmit: () => alert("Form submitted"),
+  },
+  render: () => {
+    return (
+      <div className="w-2xs min-w-0">
+        <Form
+          config={config}
+          buttonLabel="Submit"
+          onSubmit={() => alert("Form submitted")}
+        />
+      </div>
+    );
   },
 };
