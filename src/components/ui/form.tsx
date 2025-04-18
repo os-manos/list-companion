@@ -98,7 +98,7 @@ function FormLabel({
       data-slot="form-label"
       data-error={!!error}
       className={cn(
-        "data-[error=true]:text-destructive text-base font-normal text-content-primary",
+        "data-[error=true]:text-destructive text-sm md:text-base font-normal text-content-primary",
         className
       )}
       htmlFor={formItemId}
@@ -151,7 +151,7 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="form-message"
       id={formMessageId}
-      className={cn("text-destructive text-sm", className)}
+      className={cn("text-destructive text-small md:text-base", className)}
       {...props}
     >
       {body}
