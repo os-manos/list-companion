@@ -12,16 +12,16 @@ type Props = React.ComponentProps<"input"> & {
   type?: AllowedInputs;
 };
 
-type PasswordProps = {
+type PasswordIconOption = {
   shown: React.FC<SvgProps>;
   hide: React.FC<SvgProps>;
 };
 
-type IconProps = {
-  [K in AllowedInputs]: K extends "password"
-    ? PasswordProps
-    : React.FC<SvgProps>;
+type PasswordInputProps = Props & {
+  icon: PasswordIconOption;
 };
+
+type IconProps = Record<AllowedInputs, React.FC<SvgProps> | PasswordIconOption>;
 
 const Icons: Partial<IconProps> = {
   email: UserIcon,
@@ -31,10 +31,24 @@ const Icons: Partial<IconProps> = {
   },
 };
 
-const PasswordInput: React.FC<Props> = ({ disabled, ...props }) => {
-  const [showPassword, setShowPassword] = useState(false);
-  const Icon = showPassword ? Icons.password!.hide : Icons.password!.shown;
+export const Input: React.FC<Props> = ({ type = "text", ...props }) => {
+  const Svg = Icons[type];
+  if (!Svg) {
+    return <InputRoot type="text" data-slot="input" {...props} />;
+  }
+  if (typeof Svg === "object") {
+    return <PasswordInput icon={Svg} {...props} />;
+  }
+  return <IconInput Icon={Svg} type={type} {...props} />;
+};
 
+const PasswordInput: React.FC<PasswordInputProps> = ({
+  icon,
+  disabled,
+  ...props
+}) => {
+  const [showPassword, setShowPassword] = useState(false);
+  const Icon = showPassword ? icon.hide : icon.shown;
   return (
     <div className="relative flex items-center">
       <InputRoot
@@ -61,15 +75,20 @@ const PasswordInput: React.FC<Props> = ({ disabled, ...props }) => {
   );
 };
 
-const IconInput: React.FC<Props> = ({ disabled, type, ...props }) => {
-  const Icon = type && typeof Icons[type] === "function" && Icons[type];
-
+type IconInputProps = Props & {
+  Icon: React.FC<SvgProps>;
+};
+const IconInput: React.FC<IconInputProps> = ({
+  Icon,
+  disabled,
+  type,
+  ...props
+}) => {
   return (
     <div className="relative flex items-center">
       <InputRoot
         disabled={disabled}
         type={type}
-        data-slot="input"
         className={"peer"}
         {...props}
       />
@@ -89,24 +108,4 @@ const IconInput: React.FC<Props> = ({ disabled, type, ...props }) => {
       )}
     </div>
   );
-};
-
-const DefaultInput: React.FC<Props> = ({ disabled, ...props }) => {
-  return (
-    <InputRoot disabled={disabled} type="text" data-slot="input" {...props} />
-  );
-};
-
-export const Input: React.FC<Props> = ({ type, disabled, ...props }) => {
-  const inputType = type ?? "text";
-
-  if (inputType === "text") {
-    return <DefaultInput disabled={disabled} {...props} />;
-  }
-  if (inputType === "password") {
-    return <PasswordInput disabled={disabled} {...props} />;
-  }
-  if (typeof Icons[inputType] === "function") {
-    return <IconInput type={inputType} disabled={disabled} {...props} />;
-  }
 };
