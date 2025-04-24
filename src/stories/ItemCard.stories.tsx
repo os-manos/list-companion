@@ -1,24 +1,24 @@
-import type { Meta } from "@storybook/react";
-import { StoryObj } from "@storybook/react";
+import type { Meta } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
 
-import { ItemCard } from "@/components/ItemCard";
-import { useState } from "react";
+import { ItemCard } from '@/components/ItemCard';
+import { useState } from 'react';
 
 const meta = {
   component: ItemCard,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   argTypes: {
     checked: {
       table: { disable: true },
-      description: "Valor do checkbox, será recebido via param",
+      description: 'Valor do checkbox, será recebido via param',
     },
     onClick: {
       table: { disable: true },
-      description: "Evento disparado ao clicar no checkbox",
+      description: 'Evento disparado ao clicar no checkbox',
     },
-    label: { control: "text", description: "Nome do item da lista" },
+    label: { control: 'text', description: 'Nome do item da lista' },
   },
 } satisfies Meta<typeof ItemCard>;
 
@@ -27,9 +27,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: "Café preto",
+    label: 'Café preto',
     checked: false,
-    onClick: () => console.log("hello"),
+    onClick: () => console.log('hello'),
   },
   render: ({ label }) => {
     const [isChecked, setIsChecked] = useState(false);

@@ -8,22 +8,22 @@ const LinkMock = ({ href, children, ...props }) => (
   <a
     {...props}
     href={href}
-    onClick={e => {
+    onClick={(e) => {
       e.preventDefault();
-      action('Next Link')(href); 
+      action("Next Link")(href);
     }}
   >
     {children}
   </a>
 );
 
-Object.defineProperty(NextLink, 'default', {
+Object.defineProperty(NextLink, "default", {
   configurable: true,
   value: LinkMock,
 });
 
 const preview: Preview = {
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     controls: {
       matchers: {
@@ -38,4 +38,3 @@ const preview: Preview = {
 };
 
 export default preview;
-

@@ -1,8 +1,8 @@
-import { ApiRequest, NewMockRequest } from "@/lib/schemas/mocks";
-import { APIRequestContext, expect } from "@playwright/test";
+import { ApiRequest, NewMockRequest } from '@/lib/schemas/mocks';
+import { APIRequestContext, expect } from '@playwright/test';
 
 export class ApiMocks {
-  readonly baseMocksUrl = "http://127.0.0.1:3000/api/mocks";
+  readonly baseMocksUrl = 'http://127.0.0.1:3000/api/mocks';
 
   constructor(private request: APIRequestContext) {}
 
@@ -39,7 +39,7 @@ export class ApiMocks {
             route: expected.route,
             body: expect.objectContaining(expected.body),
           }),
-        ])
+        ]),
       );
     }).toPass({ timeout: 5000, intervals: [100] });
   }

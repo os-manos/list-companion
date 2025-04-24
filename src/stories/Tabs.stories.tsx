@@ -1,27 +1,26 @@
-import { Tabs } from "@/components/Tabs";
-import { TabsConfig } from "@/lib/types";
-import type { Meta, StoryObj } from "@storybook/react";
+import { Tabs } from '@/components/Tabs';
+import { TabsConfig } from '@/lib/types';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   component: Tabs,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
   },
   argTypes: {
     config: {
-      control: "object",
-      description: "Configuração dos tabs",
+      control: 'object',
+      description: 'Configuração dos tabs',
     },
     defaultValue: {
-      control: { type: "select" },
-      options: ["tab1", "tab2"],
-      description:
-        "Qual tab deve ser exibida por padrão ao renderizar o componente",
+      control: { type: 'select' },
+      options: ['tab1', 'tab2'],
+      description: 'Qual tab deve ser exibida por padrão ao renderizar o componente',
     },
     currentPageUrl: {
-      control: "text",
+      control: 'text',
       description:
-        "URL da página atual, usada para gerar uma query params com o nome da tab",
+        'URL da página atual, usada para gerar uma query params com o nome da tab',
     },
   },
 } satisfies Meta<typeof Tabs>;
@@ -29,7 +28,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-type TabsKeyType = "tab1" | "tab2";
+type TabsKeyType = 'tab1' | 'tab2';
 
 const Tab1 = () => (
   <div className="text-black">
@@ -47,11 +46,11 @@ const Tab2 = () => (
 
 const config: Record<TabsKeyType, TabsConfig> = {
   tab1: {
-    name: "Tab 1",
+    name: 'Tab 1',
     tab: <Tab1 />,
   },
   tab2: {
-    name: "Tab 2",
+    name: 'Tab 2',
     tab: <Tab2 />,
   },
 };
@@ -59,14 +58,14 @@ const config: Record<TabsKeyType, TabsConfig> = {
 export const WithPathParams: Story = {
   args: {
     config: config,
-    defaultValue: "tab1",
-    currentPageUrl: "/tabs",
+    defaultValue: 'tab1',
+    currentPageUrl: '/tabs',
   },
 };
 
 export const WithoutPathParams: Story = {
   args: {
     config: config,
-    defaultValue: "tab1",
+    defaultValue: 'tab1',
   },
 };

@@ -62,7 +62,7 @@ const handle = async (request: NextRequest) => {
       { data: response.body },
       {
         status: response.status || 200,
-      }
+      },
     );
   }
 

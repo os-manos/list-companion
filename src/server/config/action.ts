@@ -14,9 +14,7 @@ export function serverAction<TInputSchema extends z.ZodTypeAny, TOutput>({
   inputSchema,
   handler,
 }: DefineServerAction<TInputSchema, TOutput>) {
-  return async (
-    input: z.infer<TInputSchema>
-  ): Promise<ServerResponse<TOutput>> => {
+  return async (input: z.infer<TInputSchema>): Promise<ServerResponse<TOutput>> => {
     try {
       const args = inputSchema.parse(input);
       const result = await handler(args);

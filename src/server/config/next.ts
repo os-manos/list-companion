@@ -5,10 +5,7 @@ import { z } from "zod";
 import { ServerResponse } from "../responses";
 import { ServerException } from "@/server/exceptions";
 
-type DefineServerRequest<
-  TInputSchema extends z.ZodTypeAny | undefined,
-  TOutput
-> = {
+type DefineServerRequest<TInputSchema extends z.ZodTypeAny | undefined, TOutput> = {
   inputSchema?: TInputSchema;
   handler: TInputSchema extends z.ZodTypeAny
     ? (_args: z.infer<TInputSchema>) => Promise<TOutput>
@@ -19,9 +16,7 @@ export const nextRequest = <TOutput, TInputSchema extends z.ZodTypeAny>({
   inputSchema,
   handler,
 }: DefineServerRequest<TInputSchema, TOutput>) => {
-  return async (
-    input?: z.infer<TInputSchema>
-  ): Promise<ServerResponse<TOutput>> => {
+  return async (input?: z.infer<TInputSchema>): Promise<ServerResponse<TOutput>> => {
     try {
       const args = inputSchema?.parse(input);
       const result = await handler(args);

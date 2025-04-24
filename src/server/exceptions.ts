@@ -4,8 +4,8 @@ export class ServerException {
   constructor(
     public message: string,
     public status?: number,
-    public data?: any
+    public data?: any,
   ) {
-    this.name = "ActionException";
+    this.name = 'ActionException';
   }
 }
