@@ -1,12 +1,12 @@
-import { z } from "zod";
-import { env } from "./env";
+import { z } from 'zod';
+import { env } from './env';
 
 const apiUrl = () => {
   switch (env.SERVICE_ENV) {
-    case "test":
-      return "http://localhost:3000/api/mocks";
-    case "development":
-      return "http://localhost:4000";
+    case 'test':
+      return 'http://localhost:3000/api/mocks';
+    case 'development':
+      return 'http://localhost:4000';
     default:
       return env.API_URL;
   }
@@ -14,10 +14,10 @@ const apiUrl = () => {
 
 const nextUrl = () => {
   switch (env.SERVICE_ENV) {
-    case "test":
-      return "http://localhost:3000/api/mocks";
-    case "development":
-      return "http://localhost:3000";
+    case 'test':
+      return 'http://localhost:3000/api/mocks';
+    case 'development':
+      return 'http://localhost:3000';
     default:
       return env.BASE_URL;
   }

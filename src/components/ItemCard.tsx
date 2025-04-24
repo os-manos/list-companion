@@ -1,6 +1,6 @@
-import React from "react";
-import { Checkbox } from "./ui/checkbox";
-import { Trash2 } from "lucide-react";
+import React from 'react';
+import { Checkbox } from './ui/checkbox';
+import { Trash2 } from 'lucide-react';
 
 type Props = {
   checked: boolean;

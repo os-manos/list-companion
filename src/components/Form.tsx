@@ -1,7 +1,7 @@
-import { z } from "zod";
-import { Path, useForm } from "react-hook-form";
+import { z } from 'zod';
+import { Path, useForm } from 'react-hook-form';
 
-import { FormConfig } from "@/lib/types";
+import { FormConfig } from '@/lib/types';
 import {
   FormControl,
   FormField,
@@ -9,14 +9,14 @@ import {
   FormLabel,
   FormMessage,
   FormRoot,
-} from "./ui/form";
-import { Button } from "./ui/button";
+} from './ui/form';
+import { Button } from './ui/button';
 
 type Props<T extends z.ZodTypeAny> = {
   config: FormConfig<T>;
   buttonLabel: string;
   onSubmit: (data: any) => void;
-  className?: React.ComponentProps<"form">["className"];
+  className?: React.ComponentProps<'form'>['className'];
 };
 
 export const Form = <TSchema extends z.ZodTypeAny>({

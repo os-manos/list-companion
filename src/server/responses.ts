@@ -1,4 +1,4 @@
-import { ServerException } from "./exceptions";
+import { ServerException } from './exceptions';
 
 export type ServerResponse<TOutput> = {
   data?: TOutput;

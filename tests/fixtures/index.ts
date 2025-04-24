@@ -1,7 +1,7 @@
-import { test as base, BrowserContext, Page } from "@playwright/test";
+import { test as base, BrowserContext, Page } from '@playwright/test';
 
-import { ApiMocks } from "./api-mocks";
-import { mobileDevices } from "./mobile-devices";
+import { ApiMocks } from './api-mocks';
+import { mobileDevices } from './mobile-devices';
 
 type Fixtures = {
   apiMocks: ApiMocks;
@@ -14,7 +14,7 @@ export const test = base.extend<Fixtures>({
 
     await apiMocks.initialState();
 
-    if (browserName !== "firefox") {
+    if (browserName !== 'firefox') {
       context = await browser.newContext(mobileDevices);
       const page = await context.newPage();
       await use(page);

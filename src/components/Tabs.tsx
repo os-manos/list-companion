@@ -1,6 +1,6 @@
-import { TabsConfig } from "@/lib/types";
-import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "./ui/tabs";
-import Link from "next/link";
+import { TabsConfig } from '@/lib/types';
+import { TabsContent, TabsList, TabsRoot, TabsTrigger } from './ui/tabs';
+import Link from 'next/link';
 
 type Props<TConfig extends Record<string, TabsConfig>> = {
   config: TConfig;

@@ -6,6 +6,6 @@ export class ServerException {
     public status?: number,
     public data?: any,
   ) {
-    this.name = "ActionException";
+    this.name = 'ActionException';
   }
 }

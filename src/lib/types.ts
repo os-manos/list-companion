@@ -1,5 +1,5 @@
-import { z } from "zod";
-import { ControllerRenderProps, UseFormProps } from "react-hook-form";
+import { z } from 'zod';
+import { ControllerRenderProps, UseFormProps } from 'react-hook-form';
 
 export type FormItemConfig = {
   Component: React.FC<ControllerRenderProps>;

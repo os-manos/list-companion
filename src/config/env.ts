@@ -1,7 +1,7 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 const validateApiUrl = (data: any) => {
-  if (data.SERVICE_ENV === "staging") {
+  if (data.SERVICE_ENV === 'staging') {
     return !!data.API_URL;
   }
 
@@ -9,7 +9,7 @@ const validateApiUrl = (data: any) => {
 };
 
 const validateBaseUrl = (data: any) => {
-  if (data.SERVICE_ENV === "staging") {
+  if (data.SERVICE_ENV === 'staging') {
     return !!data.BASE_URL;
   }
 
@@ -18,7 +18,7 @@ const validateBaseUrl = (data: any) => {
 
 export const env = z
   .object({
-    SERVICE_ENV: z.enum(["test", "development", "staging"]),
+    SERVICE_ENV: z.enum(['test', 'development', 'staging']),
     API_URL: z.string().optional(),
     BASE_URL: z.string().optional(),
   })
