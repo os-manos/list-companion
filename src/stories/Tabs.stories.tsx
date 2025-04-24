@@ -15,8 +15,7 @@ const meta = {
     defaultValue: {
       control: { type: "select" },
       options: ["tab1", "tab2"],
-      description:
-        "Qual tab deve ser exibida por padrão ao renderizar o componente",
+      description: "Qual tab deve ser exibida por padrão ao renderizar o componente",
     },
     currentPageUrl: {
       control: "text",

@@ -43,13 +43,10 @@ const Schema = z.object({
     .email("Formato de e-mail inválido"),
   password: z
     .string()
-    .min(
-      6,
-      "O campo senha precisa ter no mínimo 6 caracteres, um simbolo e um número"
-    )
+    .min(6, "O campo senha precisa ter no mínimo 6 caracteres, um simbolo e um número")
     .regex(
       /^(?=.*[0-9])(?=.*[!@#$%^&*])/,
-      "O campo senha precisa ter no mínimo 6 caracteres, um simbolo"
+      "O campo senha precisa ter no mínimo 6 caracteres, um simbolo",
     ),
 });
 type Schema = typeof Schema;

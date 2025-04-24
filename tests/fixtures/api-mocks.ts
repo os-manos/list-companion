@@ -39,7 +39,7 @@ export class ApiMocks {
             route: expected.route,
             body: expect.objectContaining(expected.body),
           }),
-        ])
+        ]),
       );
     }).toPass({ timeout: 5000, intervals: [100] });
   }

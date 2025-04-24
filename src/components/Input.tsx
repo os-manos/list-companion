@@ -42,11 +42,7 @@ export const Input: React.FC<Props> = ({ type = "text", ...props }) => {
   return <IconInput Icon={Svg} type={type} {...props} />;
 };
 
-const PasswordInput: React.FC<PasswordInputProps> = ({
-  icon,
-  disabled,
-  ...props
-}) => {
+const PasswordInput: React.FC<PasswordInputProps> = ({ icon, disabled, ...props }) => {
   const [showPassword, setShowPassword] = useState(false);
   const Icon = showPassword ? icon.hide : icon.shown;
   return (
@@ -66,7 +62,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
           "absolute right-3 h-5 w-5 hover:cursor-pointer",
           {
             "pointer-events-none cursor-not-allowed opacity-50": disabled,
-          }
+          },
         )}
         onClick={() => setShowPassword(!showPassword)}
         aria-disabled={disabled}
@@ -78,20 +74,10 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
 type IconInputProps = Props & {
   Icon: React.FC<SvgProps>;
 };
-const IconInput: React.FC<IconInputProps> = ({
-  Icon,
-  disabled,
-  type,
-  ...props
-}) => {
+const IconInput: React.FC<IconInputProps> = ({ Icon, disabled, type, ...props }) => {
   return (
     <div className="relative flex items-center">
-      <InputRoot
-        disabled={disabled}
-        type={type}
-        className={"peer"}
-        {...props}
-      />
+      <InputRoot disabled={disabled} type={type} className={"peer"} {...props} />
       {Icon && (
         <Icon
           className={cn(
@@ -101,7 +87,7 @@ const IconInput: React.FC<IconInputProps> = ({
             "absolute right-3 h-5 w-5 hover:cursor-pointer",
             {
               "pointer-events-none cursor-not-allowed opacity-50": disabled,
-            }
+            },
           )}
           aria-disabled={disabled}
         />

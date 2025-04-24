@@ -25,8 +25,7 @@ const meta = {
     },
     className: {
       control: "text",
-      description:
-        "Recebe classes do tailwind para permitir personalizar melhor o input",
+      description: "Recebe classes do tailwind para permitir personalizar melhor o input",
       table: {
         disable: true,
       },

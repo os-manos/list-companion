@@ -9,7 +9,7 @@ export type FormItemConfig = {
 export type FormConfig<TSchema extends z.ZodTypeAny> = {
   item: Record<keyof z.infer<TSchema>, FormItemConfig>;
   hookFormConfig: UseFormProps<z.infer<TSchema>, any, z.infer<TSchema>>;
-}
+};
 
 export type TabsConfig = {
   name: string;

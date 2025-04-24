@@ -10,7 +10,7 @@ import {
   FormMessage,
   FormRoot,
 } from "./ui/form";
-import {Button} from "./ui/button";
+import { Button } from "./ui/button";
 
 type Props<T extends z.ZodTypeAny> = {
   config: FormConfig<T>;
@@ -49,7 +49,9 @@ export const Form = <TSchema extends z.ZodTypeAny>({
           />
         ))}
 
-        <Button type="submit" disabled={!form.formState.isDirty}>{buttonLabel}</Button>
+        <Button type="submit" disabled={!form.formState.isDirty}>
+          {buttonLabel}
+        </Button>
       </form>
     </FormRoot>
   );
